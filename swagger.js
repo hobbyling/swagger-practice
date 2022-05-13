@@ -8,6 +8,28 @@ const doc = {
   },
   host: 'localhost:3000', // 本地端：localhost:3000 / heroku:根據heroku網址，可以將此參數放到環境變數
   schemes: ['http', 'https'], // 此swagger文件支援的模式
+  securityDefinitions: {
+    apiKeyAuth: {
+      type: 'apiKey',
+      in: 'headers',
+      name: 'authorization',
+      description: '請加上 API Token'
+    }
+  },
+  definitions: {
+    getPost: {
+      "status": "success",
+      "data": [
+        {
+          "_id": "62663ca2342842342",
+          "name": "Hobby",
+          "tags": ["LINE"],
+          "image": "",
+          "content": "hello, hobby is here",
+        },
+      ]
+    }
+  }
 }
 
 // 宣告輸出
